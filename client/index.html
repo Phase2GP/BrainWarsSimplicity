@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brain Wars Simplicity</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+  </head>
+
+  <style>
+    *,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    .body {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      flex: 1 1 auto;
+      overflow-y: auto;
+    }
+  </style>
+
+  <body>
+    <div
+      class="container is-fluid"
+      id="landingpage"
+      style="height: 100vh; margin: 0; padding: 0;"
+    >
+      <nav
+        class="navbar is-light"
+        role="navigation"
+        aria-label="main navigation"
+        style="position: sticky;"
+      >
+        <div class="navbar-brand">
+          <a
+            class="navbar-item"
+            href="https://bulma.io"
+            style="align-items: center;"
+          >
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            />
+          </a>
+        </div>
+      </nav>
+      <!--   ROOM LIST   -->
+      <div class="container is-fluid" style="justify-content: space-around">
+        <section class="section" style="margin: 30px; height: 100vh;">
+          <div class="columns is-centered">
+            <!-- COLUMN FOR ROOM LIST -->
+            <div
+              class="column is-one-third is-centered"
+              style="height: 90vh; padding: 0 40px;"
+            >
+              <div class="box" style="height: 100%; text-align: center;">
+                <h2 class="title is-2">Room Lists</h2>
+                <!-- LIST ROOMS -->
+                <div class="card block">
+                  <div class="card-content">
+                    <div class="content">
+                      ROOM NAME 1
+                    </div>
+                    <button class="button is-warning">Join Room</button>
+                  </div>
+                </div>
+                <!-- LIST ROOMS -->
+                <!-- LIST ROOMS -->
+                <div class="card block">
+                  <div class="card-content">
+                    <div class="content">
+                      ROOM NAME 1
+                    </div>
+                    <button class="button is-warning">Join Room</button>
+                  </div>
+                </div>
+                <!-- LIST ROOMS -->
+                <!-- LIST ROOMS -->
+                <div class="card block">
+                  <div class="card-content">
+                    <div class="content">
+                      ROOM NAME 1
+                    </div>
+                    <button class="button is-warning">Join Room</button>
+                  </div>
+                </div>
+                <!-- LIST ROOMS -->
+                <!-- LIST ROOMS -->
+                <div class="card block">
+                  <div class="card-content">
+                    <div class="content">
+                      ROOM NAME 1
+                    </div>
+                    <button class="button is-warning">Join Room</button>
+                  </div>
+                </div>
+                <!-- LIST ROOMS -->
+              </div>
+            </div>
+
+            <!-- COLUMN FOR CREATE ROOM -->
+            <div class="column is-centered" style="padding: 0 40px;">
+              <div class="container" style="height: 100%; text-align: center;">
+                <div
+                  class="container is-fluid"
+                  style="width: 100%;height: 100%; align-items: center;align-content: center;display: flex; justify-content: center;"
+                >
+                  <form
+                    class="box"
+                    style="max-width: 60%; height: 40vh; align-content: center;"
+                  >
+                    <div class="field">
+                      <label class="label">Crete Room</label>
+
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="email"
+                          placeholder="e.g. alex@example.com"
+                        />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Number of Players</label>
+                      <div class="control">
+                        <input class="input" type="password" placeholder="0" />
+                      </div>
+                    </div>
+                    <button class="button is-primary">Create Room</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
