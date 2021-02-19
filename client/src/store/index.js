@@ -11,34 +11,37 @@ export default new Vuex.Store({
     username: '',
     users: [],
     status: false,
-    score: 0
+    score: 0,
+    activeUser: ''
   },
   mutations: {
-    updateQuestion (state, payload) {
+    updateQuestion(state, payload) {
       state.question = payload
     },
-    updateAnswer (state, payload) {
+    updateAnswer(state, payload) {
       state.correctAnswer = payload
     },
-    updateUser (state) {
+    updateUser(state) {
       state.username = ''
     },
-    updateStatus (state) {
+    updateStatus(state) {
       state.status = false
     },
-    updateUsers (state, payload) {
+    updateUsers(state, payload) {
       state.users = payload
+    },
+    updateActiveUser(state, payload) {
+      state.activeUser = payload
     }
   },
   actions: {
-    SOCKET_init (context, payload) {
-      console.log('ini dari vuex')
+    SOCKET_init(context, payload) {
       let random = Math.floor(Math.random() * 50)
       context.commit('updateQuestion', payload[random].question)
-      context.commit('updateAnswer', payload[random].answer )
+      context.commit('updateAnswer', payload[random].answer)
     },
     SOCKET_newServerUser(context, payload) {
-      if(!payload.length) {
+      if (!payload.length) {
         context.commit('updateUser')
         context.commit('updateStatus')
       }
@@ -50,6 +53,10 @@ export default new Vuex.Store({
     },
     SOCKET_newServerScore(context, payload) {
       context.commit('updateUsers', payload)
+    },
+    addSingleUser(context, payload) {
+      context.commit('updateActiveUser', payload)
+
     }
   }
 })

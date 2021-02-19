@@ -51,7 +51,6 @@ export default {
       let random = Math.floor(Math.random() * 50)
       if(this.getAnswerQuestion.correctAnswer == this.userAnswer){
         this.score += 10
-        console.log(this.score)
       } else {
         this.score += 0
       }
