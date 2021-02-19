@@ -24,11 +24,11 @@
     flex: 1 1 auto;
     overflow-y: auto;
   }
+
   #chat-log {
     display: flex;
     flex-direction: column;
   }
-
 </style>
 
 <body>
@@ -61,21 +61,51 @@
                 <div class="content" style="display: flex; flex-direction: column; flex-wrap:wrap;">
                   <!-- ---------  LIST OF CONTENTS ---------- -->
                   <!-- --------- LIST ROOMS ----------------- -->
-                  <div class="columns" id="chat-log" style="flex-direction: column; height:919px; max-height:920px; flex-wrap: wrap;">
+                  <div class="columns" id="chat-log"
+                    style="flex-direction: column; height:919px; max-height:920px; flex-wrap: wrap;">
 
-                    <!-- LIST ROOMS -->
-                    <div class="container is-fluid is-primary" style="flex-wrap: wrap; margin-top: 20px; margin-bottom: 50px;">
+                    <!-- GAME LOG SECTION -->
+                    <div class="container is-fluid is-primary"
+                      style="flex-wrap: wrap; margin-top: 20px; margin-bottom: 50px;">
                       <h2 class="title is-5"> Game Logs </h2>
                     </div>
-                    <div class="container is-fluid is-primary" style="flex-wrap: wrap;">
+                    <!-- GAME LOG SECTION -->
+
+                    <!-- CHAT SECTION -->
+                    <div class="container is-fluid is-primary"
+                      style="flex-wrap: wrap;display: flex;justify-content: space-evenly;">
                       <h2 class="title is-5"> Chats </h2>
-                      <div class="container is-fluid" style="align-items: flex-end;">
 
+                      <div class="container is-fluid" style="margin:0; padding:0; flex-wrap: wrap;">
+                        Messages
                       </div>
-                    </div>
-                  <!-- LIST ROOMS -->
 
-                </div>
+                      <div class="container is-fluid"
+                        style="margin:0; padding:0; flex-wrap: wrap;display: flex;justify-content: space-evenly;align-content: flex-end;">
+                        <section>
+                          <div id="form-container" class="container"
+                            style="display: flex;align-items: flex-end;align-content: flex-end;">
+                            <form id="add-task" class="box" style="margin:0; padding:0">
+                              <div class="field is-horizontal block">
+                                <div class="field-body block">
+                                  <div class="field">
+                                    <p class="control is-expanded">
+                                      <input class="input" id="task" type="text" placeholder="Your message here">
+                                    </p>
+                                  </div>
+                                  <button class="button is-link">+</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </section>
+                      </div>
+                      <!-- CHAT SECTION -->
+
+                    </div>
+                    <!-- LIST ROOMS -->
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -85,24 +115,42 @@
           <!-- COLUMN FOR CREATE ROOM -->
           <div class="column is-centered" style="padding: 0 40px;">
             <div class="container" style="height: 100%; text-align: center;">
-              <div class="container is-fluid"
-                style="width: 100%;height: 100%; align-items: center;align-content: center;display: flex; justify-content: center;">
-                <form class="box" style="max-width: 60%; height: 40vh; align-content: center;">
-                  <div class="field">
-                    <label class="label">Crete Room</label>
+              <div class="box container is-fluid"
+                style="width: 100%;height: 100%; align-items: center;align-content: center;display: flex; justify-content: center; flex-direction: column;">
+                <div class="container block" style="display: flex;flex-direction: column;">
 
-                    <div class="control">
-                      <input class="input" type="email" placeholder="e.g. alex@example.com" />
-                    </div>
+                  <div class="container is-fluid block" style="display: flex;flex-basis: 20rem;align-content: center;justify-content: center;align-items: center;">
+                    <figure class="image">
+                      <img src="src/assets/flamenco-waiting.png" style="width: 300px; height: 300px">
+                    </figure>
                   </div>
-                  <div class="field">
-                    <label class="label">Number of Players</label>
-                    <div class="control">
-                      <input class="input" type="password" placeholder="0" />
-                    </div>
+
+                  <br />
+                  <div class="container is-fluid block" style="display: flex;flex-basis: 10rem; align-content: center;justify-content: center;align-items: center;">
+                    <h3 class="title is-3">SOAL TARO DI SINI</h3>
+                    <br />
                   </div>
-                  <button class="button is-primary">Create Room</button>
-                </form>
+                  <div class="container is-fluid block" style="display: flex;flex-basis: 5rem; align-content: center;justify-content: center;align-items: center;max-width: 600px;width: 600px;">
+                    <section>
+                          <div id="form-container" class="container"
+                          style="display: flex;align-items: flex-end;align-content: flex-end;width: 600px;">
+                            <form id="add-task" class="box" style="margin:0; padding:0">
+                              <div class="field is-horizontal block">
+                                <div class="field-body block">
+                                  <div class="field">
+                                    <p class="control is-expanded">
+                                      <input class="input" id="task" type="text" placeholder="Your answer">
+                                    </p>
+                                  </div>
+                                  <button class="button is-link">Answer</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </section>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
