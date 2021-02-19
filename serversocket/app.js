@@ -50,7 +50,6 @@ io.on("connection", function (socket) {
 
   socket.on('addUser', function(payload){
     user.push(payload)
-    console.log(user)
     io.emit("newServerUser", user)
   }),
 
