@@ -33,9 +33,43 @@ for (let i = 0; i < totalQuestion; i++) {
   soal.push(obj);
 }
 
+let user = []
+
 io.on("connection", function (socket) {
   console.log("Socket.io client connected");
   socket.emit("init", soal);
+  io.emit("newServerUser", user)
+
+  socket.on('newQuestion', function(payload){
+    let newQuestion = {
+      question: soal[payload].question,
+      answer: soal[payload].answer
+    }
+    socket.emit("newServerQuestion", newQuestion)
+  }),
+
+  socket.on('addUser', function(payload){
+    user.push(payload)
+    console.log(user)
+    io.emit("newServerUser", user)
+  }),
+
+  socket.on('updateScore', function(payload){
+    user.forEach((el)=>{
+      if(el.name === payload.name){
+        el.score = payload.currentScore
+        if(el.score === 20){
+          user = el.name
+        }
+      } 
+    })
+    io.emit("newServerScore", user)
+  }),
+
+  socket.on('clearAll', function(payload){
+    user = []
+    socket.emit("newServerUser", user)
+  })
 });
 
 server.listen(port, () => {
